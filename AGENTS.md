@@ -55,12 +55,13 @@ Run from the repository root:
 
 ```bash
 cargo fmt --all -- --check
-cargo check --all-targets
-cargo test --all-targets
-cargo clippy --all-targets -- -D warnings
-RUSTDOCFLAGS="-D warnings" cargo doc --no-deps
-cargo tree -e normal
-cargo tree -d
+cargo check --locked --all-targets
+cargo test --locked --all-targets
+cargo clippy --locked --all-targets -- -D warnings
+RUSTDOCFLAGS="-D warnings" cargo doc --locked --no-deps
+cargo tree --locked -e normal
+cargo tree --locked -d
+python3 scripts/audit_dependency_boundary.py
 ```
 
 Contract changes require focused serialization/deserialization tests. Treat a

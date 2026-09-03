@@ -3,6 +3,8 @@ name = "shard-tool-api"
 version = "0.1.0"
 description = "Provider-neutral tool API contracts for Shard"
 edition = "2021"
+readme = "README.md"
+repository = "https://github.com/oupadhyay/shard-tool-api"
 publish = false
 
 [dependencies]
