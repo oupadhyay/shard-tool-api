@@ -42,6 +42,22 @@ revisions—creates distinct nominal Rust types even when their source is
 identical. `publish = false` in `Cargo.toml` intentionally prevents accidental
 crates.io publication.
 
+## Host cutover status
+
+The standalone-crate cutover was completed in
+[`shard-v2` PR #123](https://github.com/oupadhyay/shard-v2/pull/123). The
+initial host cutover consumed `shard-tool-api` revision
+`aea826a9e64b3035843aa8800f2f6c0f5fbe8b9a`. The authoritative record of the
+revisions currently consumed by the host is the host's
+[`Cargo.toml`](https://github.com/oupadhyay/shard-v2/blob/main/src-tauri/Cargo.toml)
+and resolved
+[`Cargo.lock`](https://github.com/oupadhyay/shard-v2/blob/main/src-tauri/Cargo.lock),
+not this documentation branch or this repository's current HEAD.
+
+Future portable contract changes must be merged and validated here first.
+Consumers must then pin the resulting immutable revision, followed by a pinned
+host dependency update and lockfile validation.
+
 ## Development
 
 The repository pins its Rust toolchain in `rust-toolchain.toml` and commits
