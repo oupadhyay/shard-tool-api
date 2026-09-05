@@ -84,6 +84,17 @@ coordinated sequence:
 Never mix path and Git copies in one host build: Rust treats their otherwise
 identical public types as different nominal types.
 
+The standalone cutover completed in
+[`shard-v2` PR #123](https://github.com/oupadhyay/shard-v2/pull/123), initially
+using this repository at `aea826a9e64b3035843aa8800f2f6c0f5fbe8b9a`.
+Always use the host's
+[`Cargo.toml`](https://github.com/oupadhyay/shard-v2/blob/main/src-tauri/Cargo.toml)
+and
+[`Cargo.lock`](https://github.com/oupadhyay/shard-v2/blob/main/src-tauri/Cargo.lock)
+as the authoritative record of active pins; a docs-only sibling HEAD is not
+necessarily consumed. Future portable changes remain standalone-first, then
+require an explicit pinned host update and lockfile validation.
+
 ## Host GUI Regression Matrix
 
 This crate has no GUI. Validate changed contracts in `shard-v2` through the
